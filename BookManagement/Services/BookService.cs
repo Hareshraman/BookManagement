@@ -40,6 +40,7 @@ namespace BookManagement.Services
             if (book is not null)
             {
                 await _bookRepository.DeleteBookAsync(book);
+                await _bookRepository.SaveChangesAsync();
                 return true;
             }
             return false;
